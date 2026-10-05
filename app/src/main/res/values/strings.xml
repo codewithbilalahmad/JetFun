@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JetFun</string>
+    <string name="delete_notes">Delete Notes?</string>
+    <string name="delete_notes_desp">Are you sure you want to delete all your notes. This action cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 </resources>
