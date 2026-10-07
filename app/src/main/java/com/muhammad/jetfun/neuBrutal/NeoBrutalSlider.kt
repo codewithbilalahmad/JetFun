@@ -1,4 +1,4 @@
-package com.muhammad.jetfun.neoBrutalSlider
+package com.muhammad.jetfun.neuBrutal
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures

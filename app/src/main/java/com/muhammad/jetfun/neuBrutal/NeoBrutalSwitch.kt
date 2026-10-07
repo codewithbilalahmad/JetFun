@@ -1,4 +1,4 @@
-package com.muhammad.jetfun.neuBrutalSwitch
+package com.muhammad.jetfun.neuBrutal
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.LinearEasing
@@ -34,7 +34,6 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.muhammad.jetfun.neuBrutalismProgressBar.NeuBrutalismProgressBar
 
 @Composable
 fun NeoBrutalSwitch(

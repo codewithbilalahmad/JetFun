@@ -1,17 +1,12 @@
-package com.muhammad.jetfun.neuBrutalismAlertDialog
+package com.muhammad.jetfun.neuBrutal
 
 import androidx.annotation.StringRes
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -133,11 +128,13 @@ fun NeubrutalismAlertDialog(
                             NeubrutalismButton(
                                 text = stringResource(dismissText),
                                 backgroundColor = CancelButtonColor,
+                                contentPadding = PaddingValues(horizontal = 24.dp, vertical = 12.dp),
                                 onClick = onDismiss
                             )
                             NeubrutalismButton(
                                 text = stringResource(confirmText),
                                 backgroundColor = DeleteButtonColor,
+                                contentPadding = PaddingValues(horizontal = 24.dp, vertical = 12.dp),
                                 onClick = onConfirm
                             )
                         }
@@ -156,48 +153,6 @@ private fun WindowDot(color: Color) {
             .background(color, CircleShape)
             .border(1.5.dp, BorderAndShadowColor, CircleShape)
     )
-}
-
-@Composable
-fun NeubrutalismButton(
-    modifier: Modifier = Modifier,
-    text: String,
-    shadowOffset: Dp = 10.dp,
-    shape: Shape = RoundedCornerShape(16.dp),
-    backgroundColor: Color,
-    onClick: () -> Unit,
-) {
-    val interactionSource = remember { MutableInteractionSource() }
-    val isPressed by interactionSource.collectIsPressedAsState()
-    val shadowOffset by animateFloatAsState(
-        targetValue = if (isPressed) shadowOffset.value / 2f else shadowOffset.value,
-        animationSpec = spring(
-            dampingRatio = Spring.DampingRatioMediumBouncy,
-            stiffness = Spring.StiffnessLow
-        ), label = "shadowOffset"
-    )
-    Box(
-        modifier = modifier
-            .drawBehind {
-                drawRoundRect(
-                    color = BorderAndShadowColor,
-                    topLeft = Offset(shadowOffset, shadowOffset),
-                    size = Size(size.width, size.height),
-                    cornerRadius = CornerRadius(16.dp.toPx())
-                )
-            }
-            .clip(shape)
-            .border(2.dp, BorderAndShadowColor, shape)
-            .background(backgroundColor)
-            .clickable(interactionSource = interactionSource, indication = null) { onClick() }
-            .padding(horizontal = 24.dp, vertical = 12.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = text,
-            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Medium)
-        )
-    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFA52F)

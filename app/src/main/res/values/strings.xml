@@ -4,4 +4,8 @@
     <string name="delete_notes_desp">Are you sure you want to delete all your notes. This action cannot be undone.</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="password">Password</string>
+    <string name="no_notes_yet">No Notes yet</string>
+    <string name="no_notes_yet_desp">You don’t have any notes yet. Start by creating your first note to keep your thoughts, ideas, and important information organized and easy to find.</string>
+    <string name="add_note">Add Note</string>
 </resources>
